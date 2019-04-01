@@ -14,26 +14,28 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('首页'),
         ),
         body: FutureBuilder(
-          future: getHomePageContent(),
+          future: request('homePageContent', formdata: {'lon': '115.02932', 'lat': '35.76189'}),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               //相当于转换成立 map  组合
               var data = json.decode(snapshot.data.toString());
               List<Map> swiper = (data['data']['slides'] as List).cast();
-              List<Map> navigatorList =
-                  (data['data']['category'] as List).cast();
-              String adPicture =
-                  data['data']['advertesPicture']['PICTURE_ADDRESS'];
+              List<Map> navigatorList = (data['data']['category'] as List).cast();
+              String adPicture = data['data']['advertesPicture']['PICTURE_ADDRESS'];
               String leaderImage = data['data']['shopInfo']['leaderImage'];
               String leaderPhone = data['data']['shopInfo']['leaderPhone'];
-              List<Map> recommendList =
-                  (data['data']['recommend'] as List).cast();
+              List<Map> recommendList = (data['data']['recommend'] as List).cast();
+              String floor1Title =  data['data']['floor1Pic']['PICTURE_ADDRESS'];
+              String floor2Title =  data['data']['floor2Pic']['PICTURE_ADDRESS'];
+              String floor3Title =  data['data']['floor3Pic']['PICTURE_ADDRESS'];
+              List<Map> floor1 = (data['data']['floor1'] as List).cast();
+              List<Map> floor2 = (data['data']['floor2'] as List).cast();
+              List<Map> floor3 = (data['data']['floor3'] as List).cast();
 
               return SingleChildScrollView(
                 child: Column(
@@ -51,9 +53,15 @@ class _HomePageState extends State<HomePage>
                       leaderImage: leaderImage,
                       leaderPhone: leaderPhone,
                     ),
-                    Recommend(
-                      recommendList: recommendList,
-                    ),
+                    Recommend(recommendList: recommendList,),
+                    FloorTitle(picture_address: floor1Title,),
+                    FloorContent(floorGoodsList: floor1),
+                    FloorTitle(picture_address: floor2Title,),
+                    FloorContent(floorGoodsList: floor2),
+                    FloorTitle(picture_address: floor3Title,),
+                    FloorContent(floorGoodsList: floor3),
+                     HotGoods()
+
                   ],
                 ),
               );
@@ -64,19 +72,25 @@ class _HomePageState extends State<HomePage>
             }
           },
         ));
+
+
+
   }
 
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
   }
+  void _getHotGoods(){
+    var formPage = 1;
+    request('homePageBelowConten', formdata: 1).then((val){
+      print(val);
+    }
 }
-
 // 首页轮播组件
 class SwiperDiy extends StatelessWidget {
   final List swiperDataList;
@@ -297,8 +311,22 @@ class FloorContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    return Column(
+        children: <Widget>[
+           _firsRow(),
+          _otherGoods()
+        ],
+    );
+  }
 
-    return null;
+
+  Widget _otherGoods(){
+     return Row(
+       children: <Widget>[
+         _goodsItem(floorGoodsList[3]),
+         _goodsItem(floorGoodsList[4]),
+       ],
+     );
   }
 
   Widget _firsRow() {
@@ -307,7 +335,8 @@ class FloorContent extends StatelessWidget {
          _goodsItem(floorGoodsList[0]),
          Column(
             children: <Widget>[
-
+              _goodsItem(floorGoodsList[1]),
+              _goodsItem(floorGoodsList[2]),
             ],
          ),
       ],
@@ -318,9 +347,35 @@ class FloorContent extends StatelessWidget {
     return Container(
       width: ScreenUtil().setWidth(375),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+           print('点击了楼层商品');
+        },
         child: Image.network(goods['image']),
       ),
+    );
+  }
+}
+
+class HotGoods extends StatefulWidget{
+  _HotGoodsState createState() => _HotGoodsState();
+}
+
+class _HotGoodsState extends State<HotGoods>{
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+        request('homePageBelowConten', formdata: 1).then((val){
+        print(val);
+      });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+     return Container(
+
     );
   }
 }
