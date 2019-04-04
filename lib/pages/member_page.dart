@@ -7,7 +7,9 @@ class MemberPage extends StatelessWidget{
     // TODO: implement build
     return Scaffold(
       body: Center(
+
         child: Text('商城个人中心'),
+
       ),
     );
   }

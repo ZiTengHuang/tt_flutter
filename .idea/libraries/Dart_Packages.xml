@@ -58,6 +58,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_easyrefresh">
+          <value>
+            <list>
+              <option value="E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyrefresh-1.2.7/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_page_indicator">
           <value>
             <list>
@@ -208,6 +215,7 @@
       <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/cookie_jar-1.0.0/lib" />
       <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/cupertino_icons-0.1.2/lib" />
       <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/dio-2.1.0/lib" />
+      <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyrefresh-1.2.7/lib" />
       <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_page_indicator-0.0.3/lib" />
       <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_screenutil-0.5.1/lib" />
       <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_swiper-1.1.6/lib" />
