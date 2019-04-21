@@ -4,6 +4,7 @@ import 'package:provide/provide.dart';
 import './provide/counter.dart';
 import './provide/child_category.dart';
 import './provide/category_goods_list.dart';
+import './provide/sign.dart';
 
 
 
@@ -12,9 +13,11 @@ void main(){
     var childCategory = ChildCategory();
     var categoryGoorlist = CategoryGoodsListProvide();
     var providers = Providers();
+    var sign2 = sign();
     providers
       ..provide(Provider<Counter>.value(counter))
       ..provide(Provider<ChildCategory>.value(childCategory))
+      ..provide(Provider<sign>.value(sign2))
       ..provide(Provider<CategoryGoodsListProvide>.value(categoryGoorlist));
     runApp(ProviderNode(child: MyApp(), providers: providers));
 } 

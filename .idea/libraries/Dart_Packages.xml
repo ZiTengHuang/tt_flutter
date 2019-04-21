@@ -51,6 +51,13 @@
             </list>
           </value>
         </entry>
+        <entry key="fluro">
+          <value>
+            <list>
+              <option value="D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-1.4.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter">
           <value>
             <list>
@@ -215,6 +222,7 @@
       <root url="file://D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/cookie_jar-1.0.0/lib" />
       <root url="file://D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/cupertino_icons-0.1.2/lib" />
       <root url="file://D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/dio-2.1.0/lib" />
+      <root url="file://D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-1.4.0/lib" />
       <root url="file://D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyrefresh-1.2.7/lib" />
       <root url="file://D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_page_indicator-0.0.3/lib" />
       <root url="file://D:/MySoftware/flutter_windows_v0.8.2-beta/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_screenutil-0.5.1/lib" />

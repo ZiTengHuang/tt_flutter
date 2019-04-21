@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
  import 'package:provide/provide.dart';
 import '../provide/counter.dart';
-
+import 'package:fluro/fluro.dart';
 class CartPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
